@@ -1,0 +1,47 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2rem;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--ink-raised);
+}
+
+.app-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.app-header-mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 0 3px var(--brass-soft);
+}
+
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-header-user {
+  color: var(--ash);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 560px) {
+  .app-header {
+    padding: 1rem 1.1rem;
+  }
+  .app-header-user {
+    display: none;
+  }
+}

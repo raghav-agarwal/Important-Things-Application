@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #12151b;
+  --ink-raised: #171b22;
+  --panel: #1b2029;
+  --panel-raised: #232a35;
+  --hairline: #2b323f;
+  --brass: #c6a15b;
+  --brass-bright: #ddb96f;
+  --brass-soft: rgba(198, 161, 91, 0.14);
+  --paper: #ece7da;
+  --paper-dim: #cbc6b8;
+  --ash: #8b93a3;
+  --teal: #4f9484;
+  --rust: #c1614b;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(198, 161, 91, 0.07), transparent),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(79, 148, 132, 0.05), transparent);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--brass-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+
+/* -------------------- Buttons -------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--brass);
+  color: #191308;
+}
+
+.btn-primary:hover {
+  background: var(--brass-bright);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--hairline);
+  color: var(--paper-dim);
+}
+
+.btn-ghost:hover {
+  border-color: var(--brass);
+  color: var(--paper);
+}
+
+.btn-danger {
+  background: transparent;
+  border-color: rgba(193, 97, 75, 0.5);
+  color: var(--rust);
+}
+
+.btn-danger:hover {
+  background: rgba(193, 97, 75, 0.12);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* -------------------- Forms -------------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.field label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ash);
+}
+
+.field input,
+.field textarea {
+  background: var(--ink-raised);
+  border: 1px solid var(--hairline);
+  border-radius: 7px;
+  color: var(--paper);
+  padding: 0.72rem 0.85rem;
+  font-size: 0.98rem;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--brass);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-mono);
+}
+
+.field-error {
+  color: var(--rust);
+  font-size: 0.82rem;
+}
+
+.error-banner {
+  background: rgba(193, 97, 75, 0.12);
+  border: 1px solid rgba(193, 97, 75, 0.4);
+  color: #e2a294;
+  padding: 0.7rem 0.9rem;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
